@@ -7,10 +7,18 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct ContentView: View {
+    var resource: Resource {
+        ImageResource(downloadURL: URL(string: "https://placekitten.com/g/200/300"), cacheKey: "my_cache_key")
+    }
     var body: some View {
-        Text("Hello World")
+        VStack {
+            Spacer()
+            KFImage(source: .network(resource))
+            Spacer()
+        }
     }
 }
 
